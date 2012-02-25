@@ -36,10 +36,28 @@ Vagrant::Config.run do |config|
     chef.cookbooks_path = "vcap/dev_setup/cookbooks"
     chef.roles_path     = "vcap/dev_setup/roles"
 
-    ["nats_server", "ccdb", "cloudfoundry", "router", "cloud_controller",
-     "health_manager", "dea", "redis_node", "mysql_node", "mongodb_node",
-     "neo4j_node", "redis_gateway", "mysql_gateway", "mongodb_gateway",
-     "neo4j_gateway"].each do |role|
+    spec = {
+      :deployment => {
+        :name  => "vagrant",
+        :user  => "vagrant",
+        :group => "admin",
+        :domain => "vcap.me"
+      },
+      :cloudfoundry => {
+        :home => "/home/vagrant/cloudfoundry"
+      },
+      :jobs => {
+        :install => [ "all" ]
+      }
+    }
+
+    ["vcap_pre_install", "nats_server", "ccdb", "cloudfoundry", "router", "cloud_controller", "health_manager", "dea", "redis_node", "mysql_node", "mongodb_node", "neo4j_node", "redis_gateway", "mysql_gateway", "mongodb_gateway", "neo4j_gateway"].each do |role|
+      chef.add_role role
+    end
+    specs, roles, run_list = JobManager.go(spec)
+    require 'ruby-debug'; debugger; 1
+
+    (JobManager::JOBS - ["all"]).each do |role|
       chef.add_role role
     end
 
