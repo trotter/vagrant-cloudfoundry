@@ -1,3 +1,5 @@
 .vagrant
 veewee/*.box
 veewee/iso/*
+cookbooks/*
+tmp/*
