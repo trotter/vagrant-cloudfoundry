@@ -1,0 +1,5 @@
+site 'http://community.opscode.com/api/v1'
+
+Dir['./cookbooks-sources/*'].each do |p|
+  cookbook File.basename(p), :path => 'cookbooks-sources'
+end

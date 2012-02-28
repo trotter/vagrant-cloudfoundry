@@ -1,0 +1,26 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    bluepill (1.0.0)
+    git (0.10.0)
+      runit (>= 0.0.0)
+      yum (>= 0.0.0)
+    runit (0.14.2)
+    yum (0.5.2)
+
+PATH
+  remote: cookbooks-sources
+  specs:
+    cloudfoundry_common (0.0.1)
+      rbenv (>= 0.0.0)
+    nats-server (0.0.1)
+      bluepill (>= 0.0.0)
+      cloudfoundry_common (>= 0.0.0)
+    rbenv (1.0.2)
+      git (>= 0.0.0)
+
+DEPENDENCIES
+  cloudfoundry_common (>= 0)
+  nats-server (>= 0)
+  rbenv (>= 0)
+
