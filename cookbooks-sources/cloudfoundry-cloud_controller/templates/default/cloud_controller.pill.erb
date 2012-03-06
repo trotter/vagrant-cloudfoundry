@@ -1,0 +1,9 @@
+Bluepill.application("cloud_controller") do |app|
+  app.process("cloud_controller") do |process|
+    process.start_command      = "<%= @binary %> -c <%= @config_file %>"
+    process.pid_file           = "<%= @pid_file %>"
+    process.start_grace_time   = 60.seconds
+    process.stop_grace_time    = 60.seconds
+    process.restart_grace_time = 60.seconds
+  end
+end

@@ -1,0 +1,108 @@
+---
+# Cloud Controller URI
+external_uri: api.<%= node[:cloudfoundry_cloud_controller][:server][:domain] %>
+description: <%= node[:cloudfoundry_cloud_controller][:server][:welcome] %>
+support_address: <%= node[:cloudfoundry_cloud_controller][:server][:support_address] %>
+
+# local_route is the IP address of a well known server on your network, it
+# is used to choose the right ip address (think of hosts that have multiple nics
+# and IP addresses assigned to them) of the host running the cloud controller. Default
+# value of nil, should work in most cases.
+local_route: <%= node[:cloudfoundry_common][:local_route] %>
+
+# Specifies if new users are allowed to register via VMC
+allow_registration: <%= node[:cloudfoundry_cloud_controller][:server][:allow_registration] %>
+
+# Allow applications to register URIs that are outside your domain.
+# Legacy (FIXME REMOVE)
+allow_external_app_uris: <%= node[:cloudfoundry_cloud_controller][:server][:allow_external_app_uris] %>
+
+# This dicatates what the uri namespace rules
+# are for applications. Admins can overide any of the
+# below accept taking a used uri.
+
+app_uris:
+  # Allow applications to register URIs that are outside your domain.
+  allow_external: <%= node[:cloudfoundry_cloud_controller][:server][:allow_external_app_uris] %>
+#  reserved_file:
+#  reserved_list: [www, test, dash, register, foo, bar]
+#  reserved_length: 3
+
+external_port: <%= node[:cloudfoundry_cloud_controller][:server][:external_port] %> #public CC port
+
+# nginx proxy provide multiple functions including offloading of file uploads/downloads.
+nginx:
+  use_nginx: <%= node[:cloudfoundry_cloud_controller][:server][:use_nginx] %> #nginx proxy in front of CC?
+  # instance_socket: /tmp/cloud_controller.sock
+  insecure_instance_port: <%= node[:cloudfoundry_cloud_controller][:server][:insecure_instance_port] %> #debug only!!!! -- not for production use.
+
+# if log_file is set, it must be a fully-qualified path,
+# because the bin/vcap script reads it directly from the file.
+logging:
+  level: <%= node[:cloudfoundry_cloud_controller][:server][:log_level] %>
+  file: <%= node[:cloudfoundry_cloud_controller][:server][:log_file] %>
+
+# Settings for the rails logger
+rails_logging:
+  level: <%= node[:cloudfoundry_cloud_controller][:server][:log_level] %>
+  file: <%= node[:cloudfoundry_cloud_controller][:server][:rails_log_file] %>
+
+directories:
+  droplets: <%= node[:cloudfoundry_common][:droplets_dir] %>
+  resources: <%= node[:cloudfoundry_common][:resources_dir] %>
+  staging_manifests: <%= node[:cloudfoundry_common][:staging_manifests_dir] %>
+  staging_cache: <%= node[:cloudfoundry_common][:staging_cache_dir] %>
+  tmpdir: <%= node[:cloudfoundry_common][:tmpdir] %>
+
+# NATS message bus URI
+mbus: nats://<%= node[:nats_server][:user] %>:<%= node[:nats_server][:password] %>@<%= node[:cloudfoundry_common][:nats_server][:host] %>:<%= node[:nats_server][:port] %>/
+keys:
+  password: 'password key goes here'
+  token: 'token key goes here'
+pid: <%= node[:cloudfoundry_cloud_controller][:server][:pid_file] %>
+rails_environment: production
+database_environment: # replaces database.yml
+  production:
+    database: <%= node[:cloudfoundry_cloud_controller][:database][:name] %>
+    host: <%= node[:cloudfoundry_cloud_controller][:database][:host] %>
+    port: 5432
+    encoding: utf8
+    username: postgres
+    password: <%= node[:postgresql][:password][:postgres] %>
+    adapter: postgresql
+    timeout: 2000
+    template: template0 # Required for utf8 encoding
+# App staging parameters
+staging:
+  max_concurrent_stagers: <%= node[:cloudfoundry_cloud_controller][:server][:max_current_stagers] %>
+  # Max duration for staging process
+  max_staging_runtime:    <%= node[:cloudfoundry_cloud_controller][:server][:max_staging_runtime] %>
+  # Create a secure environment for staging
+  secure: <%= node[:cloudfoundry_cloud_controller][:server][:staging_secure] %>
+
+# admin support
+admins: [ <%= node[:cloudfoundry_cloud_controller][:server][:admins].join(", ") %> ]
+https_required: false
+https_required_for_admins: false
+
+# Controls the amount of resources assigned to a user
+# Normal user accounts
+default_account_capacity:
+  memory:   <%= node[:cloudfoundry_common][:capacity][:memory] %>
+  app_uris: <%= node[:cloudfoundry_common][:capacity][:max_uris] %>
+  services: <%= node[:cloudfoundry_common][:capacity][:max_services] %>
+  apps:     <%= node[:cloudfoundry_common][:capacity][:max_apps] %>
+
+# Services we provide, and their tokens. Avoids bootstrapping DB.
+#builtin_services:
+
+# Enable/disable starting apps in debug modes.
+allow_debug: <%= node[:cloudfoundry_cloud_controller][:server][:allow_debug] %>
+
+# Supported runtime versions and debug modes.
+# Used for /info/runtimes endpoint (served unfiltered as JSON)
+runtimes:
+<%- node[:cloudfoundry_cloud_controller][:server][:runtimes].each do |runtime| %>
+  <%= runtime[:name] %>:
+    version: <%= runtime[:version] %>
+<%- end %>

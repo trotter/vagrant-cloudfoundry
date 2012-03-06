@@ -1,0 +1,24 @@
+---
+name: "rails3"
+runtimes:
+  - "ruby19":
+      version: <%= node[:cloudfoundry_common][:ruby_1_9_2_version] %>
+      description: "Ruby 1.9.2"
+      executable: "<%= ruby_path(node[:cloudfoundry_common][:ruby_1_9_2_version]) %>"
+      environment:
+       rails_env: "production"
+       bundle_gemfile:
+       rack_env: "production"
+app_servers:
+  - "thin":
+      description: "Thin"
+      executable: false
+      default: true
+detection:
+  - "config/application.rb": true
+  - "config/environment.rb": true
+staged_services:
+  - "name": "mysql"
+    "version": "*"
+  - "name": "postgresql"
+    "version": "*"
