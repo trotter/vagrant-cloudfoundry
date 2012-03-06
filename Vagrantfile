@@ -40,5 +40,10 @@ Vagrant::Config.run do |config|
 #    chef.roles_path     = "roles"
 
     chef.add_recipe "nats-server"
+    chef.add_recipe "cloudfoundry-cloud_controller"
+
+    chef.json = {
+      :postgresql => { :password => { :postgres => "password" } } # Root postgres password
+    }
   end
 end
