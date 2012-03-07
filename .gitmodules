@@ -13,3 +13,6 @@
 [submodule "cookbooks-sources/cloudfoundry-router"]
 	path = cookbooks-sources/cloudfoundry-router
 	url = git@github.com:trotter/cloudfoundry-router-cookbook.git
+[submodule "cookbooks-sources/cloudfoundry-health_manager"]
+	path = cookbooks-sources/cloudfoundry-health_manager
+	url = git@github.com:trotter/cloudfoundry-health_manager-cookbook.git

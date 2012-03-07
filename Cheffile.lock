@@ -38,6 +38,9 @@ PATH
     cloudfoundry-common (0.0.1)
       apt (>= 0.0.0)
       rbenv (>= 0.0.0)
+    cloudfoundry-health_manager (0.0.1)
+      bluepill (>= 0.0.0)
+      cloudfoundry-common (>= 0.0.0)
     cloudfoundry-router (0.0.1)
       bluepill (>= 0.0.0)
       cloudfoundry-common (>= 0.0.0)
@@ -51,6 +54,7 @@ PATH
 DEPENDENCIES
   cloudfoundry-cloud_controller (>= 0)
   cloudfoundry-common (>= 0)
+  cloudfoundry-health_manager (>= 0)
   cloudfoundry-router (>= 0)
   nats-server (>= 0)
   rbenv (>= 0)

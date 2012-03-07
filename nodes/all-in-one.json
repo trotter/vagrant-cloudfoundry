@@ -4,7 +4,10 @@
       "postgres": "password"
     }
   },
-  "run_list": ["nats-server",
-               "cloudfoundry-cloud_controller",
-               "cloudfoundry-router"]
+  "run_list": [
+    "nats-server",
+    "cloudfoundry-cloud_controller",
+    "cloudfoundry-router",
+    "cloudfoundry-health_manager"
+  ]
 }
