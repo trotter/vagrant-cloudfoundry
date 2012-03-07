@@ -1,0 +1,9 @@
+{
+  "postgresql": {
+    "password": {
+      "postgres": "password"
+    }
+  },
+  "run_list": ["nats-server",
+               "cloudfoundry-cloud_controller"]
+}
