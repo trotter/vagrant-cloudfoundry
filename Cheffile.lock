@@ -1,6 +1,7 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
+    apt (1.3.2)
     aws (0.99.1)
     bluepill (1.0.0)
     database (1.1.2)
@@ -23,7 +24,6 @@ SITE
 PATH
   remote: cookbooks-sources
   specs:
-    apt (1.3.2)
     cloudfoundry-cloud_controller (0.0.1)
       cloudfoundry-common (>= 0.0.0)
       database (>= 0.0.0)
@@ -39,7 +39,6 @@ PATH
       git (>= 0.0.0)
 
 DEPENDENCIES
-  apt (>= 0)
   cloudfoundry-cloud_controller (>= 0)
   cloudfoundry-common (>= 0)
   nats-server (>= 0)
