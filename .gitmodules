@@ -1,6 +1,3 @@
-[submodule "vcap"]
-	path = vcap
-	url = https://github.com/cloudfoundry/vcap.git
 [submodule "cookbooks-sources/cloudfoundry-common"]
 	path = cookbooks-sources/cloudfoundry-common
 	url = git@github.com:trotter/cloudfoundry-common-cookbook.git
