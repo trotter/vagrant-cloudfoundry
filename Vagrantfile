@@ -1,7 +1,5 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-require File.expand_path("../vcap/dev_setup/lib/job_manager", __FILE__)
-
 Vagrant::Config.run do |config|
   config.vm.box = "ubuntu-10.04.2-cloud-foundry.box"
 
