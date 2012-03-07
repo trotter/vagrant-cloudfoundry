@@ -10,3 +10,6 @@
 [submodule "cookbooks-sources/cloudfoundry-cloud_controller"]
 	path = cookbooks-sources/cloudfoundry-cloud_controller
 	url = git@github.com:trotter/cloudfoundry-cloud_controller-cookbook.git
+[submodule "cookbooks-sources/cloudfoundry-router"]
+	path = cookbooks-sources/cloudfoundry-router
+	url = git@github.com:trotter/cloudfoundry-router-cookbook.git
