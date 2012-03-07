@@ -4,6 +4,7 @@ SITE
     apt (1.3.2)
     aws (0.99.1)
     bluepill (1.0.0)
+    build-essential (1.0.0)
     database (1.1.2)
       aws (>= 0.0.0)
       mysql (>= 1.2.0)
@@ -14,6 +15,10 @@ SITE
       yum (>= 0.0.0)
     mysql (1.2.4)
       openssl (>= 0.0.0)
+    nginx (0.100.0)
+      bluepill (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      runit (>= 0.0.0)
     openssl (1.0.0)
     postgresql (0.99.2)
       openssl (>= 0.0.0)
@@ -25,6 +30,7 @@ PATH
   remote: cookbooks-sources
   specs:
     cloudfoundry-cloud_controller (0.0.1)
+      bluepill (>= 0.0.0)
       cloudfoundry-common (>= 0.0.0)
       database (>= 0.0.0)
       mysql (>= 0.0.0)
@@ -32,6 +38,10 @@ PATH
     cloudfoundry-common (0.0.1)
       apt (>= 0.0.0)
       rbenv (>= 0.0.0)
+    cloudfoundry-router (0.0.1)
+      bluepill (>= 0.0.0)
+      cloudfoundry-common (>= 0.0.0)
+      nginx (>= 0.0.0)
     nats-server (0.0.1)
       bluepill (>= 0.0.0)
       cloudfoundry-common (>= 0.0.0)
@@ -41,6 +51,7 @@ PATH
 DEPENDENCIES
   cloudfoundry-cloud_controller (>= 0)
   cloudfoundry-common (>= 0)
+  cloudfoundry-router (>= 0)
   nats-server (>= 0)
   rbenv (>= 0)
 
