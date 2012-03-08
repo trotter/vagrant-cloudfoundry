@@ -8,6 +8,7 @@
     "nats-server",
     "cloudfoundry-cloud_controller",
     "cloudfoundry-router",
-    "cloudfoundry-health_manager"
+    "cloudfoundry-health_manager",
+    "cloudfoundry-dea"
   ]
 }

@@ -16,3 +16,6 @@
 [submodule "cookbooks-sources/cloudfoundry-health_manager"]
 	path = cookbooks-sources/cloudfoundry-health_manager
 	url = git@github.com:trotter/cloudfoundry-health_manager-cookbook.git
+[submodule "cookbooks-sources/cloudfoundry-dea"]
+	path = cookbooks-sources/cloudfoundry-dea
+	url = git@github.com:trotter/cloudfoundry-dea-cookbook.git
