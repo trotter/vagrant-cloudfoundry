@@ -73,9 +73,7 @@ able to run chef and use knife solo to run the cookbooks against it.
 In order to access your CloudFoundry Instance, you'll need to setup an
 ssh tunnel to forward port 80 from your VM to a local port:
 
-    ssh <user>@<VM IP address>
-    ifconfig # Note the VM's IP address to use on the next line.
-    sudo ssh -L 8080:<VM IP address>:80 vagrant@<VM IP address> -N
+    sudo ssh -L 8080:<VM IP address>:80 <user>@<VM IP address> -N &
 
 Connecting To Your CloudFoundry Instance
 ----------------------------------------
