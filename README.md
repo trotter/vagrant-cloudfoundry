@@ -28,6 +28,14 @@ With either approach, you'll first need the required Ruby Gems:
 
     bundle install
 
+You'll also need to download all the required cookbooks and their
+dependencies using librarian:
+
+    librarian-chef install
+
+If you make any changes to the cookbooks in cookbooks-sources, you'll
+need to run `librarian-chef install` again in order to pick them up.
+
 Vagrant
 -------
 
