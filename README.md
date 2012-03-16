@@ -94,6 +94,25 @@ our VM.
 
 For more information on the vmc client, run `vmc help`.
 
+
+Pushing an app
+--------------
+
+When pushing an app you need to specify the URL without the port number, otherwise you will get an error:
+<pre><code>
+~$ vmc push myapp
+Would you like to deploy from the current directory? [Yn]: 
+Application Deployed URL [<b>myapp.vcap.me:8080</b>]: <b>myapp.vcap.me</b>
+Detected a Rails Application, is this correct? [Yn]: 
+Memory Reservation (64M, 128M, 256M, 512M, 1G, 2G) [256M]: 
+Creating Application: OK
+Uploading Application:
+  Checking for available resources: OK
+  Processing resources: OK
+  Packing application: OK
+  Uploading (6M): OK
+</code></pre>
+
 License and Author
 ==================
 
