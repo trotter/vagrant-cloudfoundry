@@ -19,3 +19,6 @@
 [submodule "cookbooks-sources/cloudfoundry-dea"]
 	path = cookbooks-sources/cloudfoundry-dea
 	url = git@github.com:trotter/cloudfoundry-dea-cookbook.git
+[submodule "cookbooks-sources/cloudfoundry-mysql-service"]
+	path = cookbooks-sources/cloudfoundry-mysql-service
+	url = git@github.com:trotter/cloudfoundry-mysql-service-cookbook.git

@@ -42,6 +42,7 @@ Vagrant::Config.run do |config|
     chef.add_recipe "cloudfoundry-router"
     chef.add_recipe "cloudfoundry-health_manager"
     chef.add_recipe "cloudfoundry-dea"
+    chef.add_recipe "cloudfoundry-mysql-service"
 
     chef.json = {
       :postgresql => { :password => { :postgres => "password" } } # Root postgres password

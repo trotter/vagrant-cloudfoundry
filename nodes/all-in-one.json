@@ -4,11 +4,17 @@
       "postgres": "password"
     }
   },
+  "mysql": {
+    "server_debian_password": "password",
+    "server_root_password": "password",
+    "server_repl_password": "password"
+  },
   "run_list": [
     "nats-server",
     "cloudfoundry-cloud_controller",
     "cloudfoundry-router",
     "cloudfoundry-health_manager",
-    "cloudfoundry-dea"
+    "cloudfoundry-dea",
+    "cloudfoundry-mysql-service"
   ]
 }
