@@ -13,7 +13,7 @@ Vagrant::Config.run do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  # config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
+  config.vm.box_url = File.dirname(__FILE__) + "/veewee/ubuntu-10.04.2-cloud-foundry.box"
 
   # Assign this VM to a host-only network IP, allowing you to access it
   # via the IP. Host-only networks can talk to the host machine as well as
