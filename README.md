@@ -68,12 +68,12 @@ Ubuntu 10.04 iso and install it. Next, you'll bootstrap the box to be
 able to run chef and use knife solo to run the cookbooks against it.
 
     knife prepare <user>@<VM IP address>
-    knife cook user@vm-ip nodes/all-in-one.json
+    knife cook <user>@<VM IP address> nodes/all-in-one.json
 
 In order to access your CloudFoundry Instance, you'll need to setup an
 ssh tunnel to forward port 80 from your VM to a local port:
 
-    sudo ssh -L 8080:<VM IP address>:80 <user>@<VM IP address> -N &
+    sudo ssh -L 8080:<VM IP address>:80 <user>@<VM IP address> -N
 
 Connecting To Your CloudFoundry Instance
 ----------------------------------------
