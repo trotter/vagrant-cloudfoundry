@@ -1,4 +1,4 @@
-source 'http://rubygems.com'
+source :rubygems
 
 gem 'knife-solo'
 gem 'vagrant'
