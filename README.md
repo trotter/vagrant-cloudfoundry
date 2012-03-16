@@ -3,7 +3,7 @@ Description
 
 Vagrant CloudFoundry provides a Vagrantfile, necessary Veewee
 files, and the requisite cookbooks (as submodules) for booting a
- VirtualBox VM running a full CloudFoundry instance. Unfortunately,
+VirtualBox VM running a full CloudFoundry instance. Unfortunately,
 Virtualbox is not _always_ the fastest, so this repository also contains
 a node.json and solo.rb necessary for running the CloudFoundry cookbooks
 against an existing machine, such as one that has been created with
@@ -14,7 +14,8 @@ Requirements
 
 To use this repository, you need Ruby installed on your local machine.
 This code has only been tested with Ruby 1.9.2, but it _may_ work on
-1.8.7 as well. If you're planning on running VMs locally, you'll also need Virtualbox, VMware Fusion, or Parallels.
+1.8.7 as well. If you're planning on running VMs locally, you'll also
+need Virtualbox, VMware Fusion, or Parallels.
 
 Usage
 =====
