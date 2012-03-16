@@ -79,13 +79,14 @@ ssh tunnel to forward port 80 from your VM to a local port:
 Connecting To Your CloudFoundry Instance
 ----------------------------------------
 
-To access your CloudFoundry Instance, you need to register your vmc
+To access your CloudFoundry instance, you need to register your vmc
 target your vmc client at `api.vcap.me:8080`. This will work because
 VMware has purchased the `vcap.me` domain and pointed it at `127.0.0.1`.
 The port of `8080` on the end is the port that we have forwarded from
 our VM.
 
     vmc target api.vcap.me:8080
+
     vmc register   # Provide a username and password
     vmc apps       # You will have no apps
     vmc runtimes   # You'll see a list of available runtimes
@@ -93,6 +94,22 @@ our VM.
     vmc services   # You'll see a list of available services
 
 For more information on the vmc client, run `vmc help`.
+
+Deploying To Your CloudFoundry Instance
+---------------------------------------
+
+Deploying to your CloudFoundry instance is slightly wonky, because we
+only support the ruby19 runtime right now. Therefore, when you push
+apps, you'll want to explicitly specify this runtime.
+
+    vmc push --runtime=ruby19
+
+In addition, our hostname is slightly off on account of going through an
+ssh tunnel to reach our instance. Therefore, you'll need to override the
+default deploy url with one that does not include the port number.
+
+    vmc push --runtime=ruby19 --url <APP NAME>.vcap.me
+    curl http://<APP NAME>.vcap.me:8080
 
 License and Author
 ==================
