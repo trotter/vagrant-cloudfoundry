@@ -22,3 +22,6 @@
 [submodule "cookbooks-sources/cloudfoundry-mysql-service"]
 	path = cookbooks-sources/cloudfoundry-mysql-service
 	url = git@github.com:trotter/cloudfoundry-mysql-service-cookbook.git
+[submodule "cookbooks-sources/cloudfoundry-ruby-runtime"]
+	path = cookbooks-sources/cloudfoundry-ruby-runtime
+	url = git@github.com:trotter/cloudfoundry-ruby-runtime-cookbook.git
