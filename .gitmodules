@@ -25,3 +25,6 @@
 [submodule "cookbooks-sources/cloudfoundry-ruby-runtime"]
 	path = cookbooks-sources/cloudfoundry-ruby-runtime
 	url = git@github.com:trotter/cloudfoundry-ruby-runtime-cookbook.git
+[submodule "cookbooks-sources/cloudfoundry-java-runtime"]
+	path = cookbooks-sources/cloudfoundry-java-runtime
+	url = git@github.com:trotter/cloudfoundry-java-runtime-cookbook.git
