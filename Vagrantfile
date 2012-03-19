@@ -38,6 +38,8 @@ Vagrant::Config.run do |config|
 #    chef.roles_path     = "roles"
 
     chef.add_recipe "nats-server"
+    chef.add_recipe "cloudfoundry-ruby-runtime"
+    chef.add_recipe "cloudfoundry-java-runtime"
     chef.add_recipe "cloudfoundry-cloud_controller"
     chef.add_recipe "cloudfoundry-router"
     chef.add_recipe "cloudfoundry-health_manager"

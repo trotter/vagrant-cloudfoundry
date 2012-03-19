@@ -11,6 +11,8 @@
   },
   "run_list": [
     "nats-server",
+    "cloudfoundry-ruby-runtime",
+    "cloudfoundry-java-runtime",
     "cloudfoundry-cloud_controller",
     "cloudfoundry-router",
     "cloudfoundry-health_manager",
