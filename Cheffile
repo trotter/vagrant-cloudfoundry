@@ -3,6 +3,10 @@
 
 site 'http://community.opscode.com/api/v1'
 
+cookbook "bluepill",
+         :git => "git://github.com/RiotGames/bluepill.git",
+         :ref => "add-reload"
+
 Dir['./cookbooks-sources/*'].each do |p|
   cookbook File.basename(p), :path => 'cookbooks-sources'
 end

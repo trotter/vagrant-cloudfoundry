@@ -3,7 +3,6 @@ SITE
   specs:
     apt (1.3.2)
     aws (0.99.1)
-    bluepill (1.0.0)
     build-essential (1.0.0)
     database (1.1.2)
       aws (>= 0.0.0)
@@ -27,6 +26,13 @@ SITE
     xfs (1.0.0)
     yum (0.5.2)
 
+GIT
+  remote: git://github.com/RiotGames/bluepill.git
+  ref: add-reload
+  sha: 54b98efe54561c76f813881c189339d01b043ffe
+  specs:
+    bluepill (1.0.2)
+
 PATH
   remote: cookbooks-sources
   specs:
@@ -42,8 +48,6 @@ PATH
     cloudfoundry-dea (0.0.1)
       bluepill (>= 0.0.0)
       cloudfoundry-common (>= 0.0.0)
-      cloudfoundry-java-runtime (>= 0.0.0)
-      cloudfoundry-ruby-runtime (>= 0.0.0)
     cloudfoundry-health_manager (0.0.1)
       bluepill (>= 0.0.0)
       cloudfoundry-common (>= 0.0.0)
@@ -66,6 +70,7 @@ PATH
       git (>= 0.0.0)
 
 DEPENDENCIES
+  bluepill (>= 0)
   cloudfoundry-cloud_controller (>= 0)
   cloudfoundry-common (>= 0)
   cloudfoundry-dea (>= 0)
