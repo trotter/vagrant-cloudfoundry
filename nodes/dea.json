@@ -1,0 +1,12 @@
+{
+  "cloudfoundry_common": {
+    "nats_server": {
+      "host": "192.168.92.140"
+    }
+  },
+  "run_list": [
+    "cloudfoundry-ruby-runtime",
+    "cloudfoundry-java-runtime",
+    "cloudfoundry-dea"
+  ]
+}
