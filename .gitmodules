@@ -31,3 +31,6 @@
 [submodule "cookbooks-sources/cloudfoundry-node-runtime"]
 	path = cookbooks-sources/cloudfoundry-node-runtime
 	url = git@github.com:trotter/cloudfoundry-node-runtime-cookbook.git
+[submodule "cookbooks-sources/cloudfoundry-mongodb-service"]
+	path = cookbooks-sources/cloudfoundry-mongodb-service
+	url = git@github.com:trotter/cloudfoundry-mongodb-service-cookbook.git

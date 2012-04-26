@@ -18,6 +18,7 @@
     "cloudfoundry-router",
     "cloudfoundry-health_manager",
     "cloudfoundry-dea",
-    "cloudfoundry-mysql-service"
+    "cloudfoundry-mysql-service",
+    "cloudfoundry-mongodb-service"
   ]
 }
