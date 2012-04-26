@@ -13,6 +13,7 @@
     "nats-server",
     "cloudfoundry-ruby-runtime",
     "cloudfoundry-java-runtime",
+    "cloudfoundry-node-runtime",
     "cloudfoundry-cloud_controller",
     "cloudfoundry-router",
     "cloudfoundry-health_manager",

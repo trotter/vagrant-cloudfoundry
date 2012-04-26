@@ -28,3 +28,6 @@
 [submodule "cookbooks-sources/cloudfoundry-java-runtime"]
 	path = cookbooks-sources/cloudfoundry-java-runtime
 	url = git@github.com:trotter/cloudfoundry-java-runtime-cookbook.git
+[submodule "cookbooks-sources/cloudfoundry-node-runtime"]
+	path = cookbooks-sources/cloudfoundry-node-runtime
+	url = git@github.com:trotter/cloudfoundry-node-runtime-cookbook.git
