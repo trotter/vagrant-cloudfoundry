@@ -32,6 +32,7 @@ With either approach, you'll first need the required Ruby Gems:
 You'll also need to download all the required cookbooks and their
 dependencies using librarian:
 
+    git submodule update --init
     librarian-chef install
 
 If you make any changes to the cookbooks in cookbooks-sources, you'll
